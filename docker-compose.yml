@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mysql:
+    image: mysql
+    ports: 
+      - "3306:3306"
+    volumes:
+      - "./mysql:/var/lib/mysql"
+  redis:
+    image: "redis:2.8"
+    ports:
+      - "6379:6379"
+    volumes:
+      - "./redis:/data"
+  app:
+    build: ./app
+    volumes:
+      - "./app:/usr/local/nginx/html"
