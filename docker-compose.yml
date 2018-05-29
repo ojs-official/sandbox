@@ -16,3 +16,9 @@ services:
     build: ./app
     volumes:
       - "./app:/usr/local/nginx/html"
+  nginx:
+    image: "nginx:latest"
+    ports:
+      - "80:80"
+    volumes:
+      - "./nginx:/usr/share/nginx/html"
